@@ -1,0 +1,380 @@
+/* ボタンのホバー時のスタイル */
+.wp-block-button.is-style-outline .wp-element-button:hover {
+  background-color: var(--wp--preset--color--custom-gray-light);
+}
+
+/* 矢印付きボタン（Default） */
+.wp-block-button.is-style-default-arrow-button .wp-element-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wp--preset--spacing--16);
+  padding: var(--wp--preset--spacing--16) var(--wp--preset--spacing--40);
+  border: 2px solid var(--wp--preset--color--custom-gray);
+  background: var(--wp--preset--color--custom-white);
+  color: var(--wp--preset--color--custom-black);
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 24px;
+    aspect-ratio: 1;
+    background: url(../img/block/button/default-arrow-button.svg) no-repeat
+      center / contain;
+  }
+
+  &:hover {
+    background-color: var(--wp--preset--color--custom-gray-light);
+
+    &::after {
+      background-image: url(../img/block/button/default-arrow-button--hover.svg);
+    }
+  }
+}
+
+/* 矢印付きボタン（Priority） */
+.wp-block-button.is-style-priority-arrow-button .wp-element-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wp--preset--spacing--16);
+  padding: var(--wp--preset--spacing--16) var(--wp--preset--spacing--40);
+  border: 2px solid var(--wp--preset--color--custom-red);
+  background: var(--wp--preset--color--custom-red);
+  color: var(--wp--preset--color--custom-white);
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 24px;
+    aspect-ratio: 1;
+    background: url(../img/block/button/priority-arrow-button.svg) no-repeat
+      center / contain;
+  }
+
+  &:hover {
+    background-color: var(--wp--preset--color--custom-red-dark);
+    border-color: var(--wp--preset--color--custom-red-dark);
+
+    &::after {
+      background-image: url(../img/block/button/priority-arrow-button--hover.svg);
+    }
+  }
+}
+
+/* カテゴリーバッジのカスタマイズ */
+.wp-block-post-terms.is-style-category-badge {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wp-block-post-terms.is-style-category-badge a:where(:not(.wp-element-button)) {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--wp--preset--color--custom-blue);
+  /* font-size: var(--wp--preset--font-size--small); */
+  color: var(--wp--preset--color--custom-white);
+  text-decoration: none;
+}
+
+.wp-block-post-terms.is-style-category-badge .wp-block-post-terms__separator {
+  display: none;
+}
+
+/* ページネーションのカスタマイズ */
+.wp-block-query-pagination {
+
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-next {
+  margin-left: var(--wp--preset--spacing--30);
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-previous {
+  margin-right: var(--wp--preset--spacing--30);
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-next-arrow, .wp-block-query-pagination .wp-block-query-pagination-previous-arrow {
+  margin: 0;
+}
+
+
+.wp-block-query-pagination-numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-numbers {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--wp--preset--color--custom-gray-light);
+  text-decoration: none;
+
+  &.current {
+    color: var(--wp--preset--color--custom-white);
+    font-weight: 700;
+    background-color: var(--wp--preset--color--custom-red);
+  }
+}
+
+/* 検索ボックスのカスタマイズ */
+.wp-block-search__input {
+    padding: var(--wp--preset--spacing--12);
+    border-radius: 8px;
+    border-color: var(--wp--preset--color--custom-gray-more-light);
+    border-width: 2px;
+    background-color: var(--wp--preset--color--custom-gray-more-light);
+}
+
+:root .wp-block-search__button {
+  padding: var(--wp--preset--spacing--12) var(--wp--preset--spacing--24);
+  white-space: nowrap;
+  border-radius: 8px;
+} 
+/*カテゴリーリストのカスタマイズ  */
+.wp-block-categories-list {
+  display: grid;
+  gap: var(--wp--preset--spacing--12);
+  margin: 0;
+  padding: 0;
+}
+
+.wp-block-categories-list .cat-item {
+  list-style: none;
+  padding-left: 18px;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-color: var(--wp--preset--color--custom-red);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+  }  
+}
+
+.wp-block-categories-list .cat-item a {
+    text-decoration: none;
+  }
+
+
+.snow-monkey-form {
+}
+
+.smf-form > .smf-item + .smf-item {
+    margin-top: var(--wp--preset--spacing--30);
+}
+
+/* テキスt（1行） */
+.smf-form .smf-text-control__control {
+	width: 100%;
+	padding: 24px 20px;
+	border: none;
+	border-radius: 8px;
+	background: var(--wp--preset--color--custom-gray-more-light);
+	font-size: 16px;
+	font-weight: 500;
+	box-shadow: none;
+}
+
+/* テキストエリア */
+.smf-form .smf-textarea-control__control {
+	width: 100%;
+	height: 150px;
+	padding: 24px 20px;
+	border: none;
+	border-radius: 8px;
+	background: var(--wp--preset--color--custom-gray-more-light);
+	font-size: 16px;
+	font-weight: 500;
+	box-shadow: none;
+}
+
+/* セレクトボックス */
+.smf-form .smf-select-control {
+	display: block;
+}
+
+.smf-form .smf-select-control__control {
+	display: block;
+	width: 100%;
+	padding: 24px 70px 24px 20px;
+	border: none;
+	border-radius: 8px;
+  background:  var(--wp--preset--color--custom-gray-more-light) url(../img/block/form/select-icon.svg) no-repeat center right 0 / auto 100%;
+	font-size: 16px;
+	font-weight: 500;
+  appearance: none;
+  color: inherit;
+}
+
+/* ラジオボタン */
+.smf-radio-buttons-control__control {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		align-items: center;
+		gap: 24px;
+	}
+}
+
+.smf-form .smf-radio-button-control {
+	align-items: center;
+	gap: 10px;
+}
+
+.smf-form .smf-radio-button-control__control {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	border: none;
+	border-radius: 50%;
+	background: #E8E8E8;
+	appearance: none;
+}
+
+.smf-form .smf-radio-button-control__control::before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--custom-red);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.smf-form .smf-radio-button-control__control:checked {
+	background-color: #E8E8E8;
+	border: none;
+}
+
+/* .smf-form .smf-radio-button-control__control:checked + .smf-radio-button-control__label {
+	font-weight: 700;
+} */
+
+.smf-form .smf-radio-button-control__control:checked::before {
+	opacity: 1;
+}
+
+.smf-radio-button-control__label {
+
+}
+
+/* チェックボックス */
+.smf-form .smf-checkbox-control {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+}
+
+.smf-form .smf-checkbox-control__control {
+	position: relative;
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	border: 1px solid #DCDCDC;
+	border-radius: 4px;
+	background: #fff;
+	appearance: none;
+}
+
+.smf-form .smf-checkbox-control__control::before {
+	content: "";
+	position: absolute;
+	top: 8.65px;
+	left: 6.54px;
+	width: 14.91px;
+	height: 10.69px;
+	background: url(../img/block/form/check-icon.svg) no-repeat center / contain;
+	transform: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.smf-form .smf-checkbox-control__control:checked {
+	background: #fff;
+	border-color: #DCDCDC;
+}
+
+.smf-form .smf-checkbox-control__control:checked::before {
+  opacity: 1;
+}
+
+.smf-item {
+	display: grid;
+	gap: 20px;
+}
+
+.smf-item__label__text {
+	font-size: var(--wp--preset--font-size--semi-large);
+	font-weight: 700;
+}
+
+.smf-item:has([data-validations*="required"]) .smf-item__label {
+	display: flex;
+	align-items: center;;
+	gap: 0.75rem;
+
+	&::after {
+		content: "必須";
+		font-size: var(--wp--preset--font-size--small);
+		padding: 8px;
+		background: var(--wp--preset--color--custom-red);
+		border-radius: 4px;
+		color: #fff;
+	}
+}
+
+.smf-text-control__control {
+
+}
+	
+/* ボタン */
+.smf-action {
+  text-align: center;
+}
+
+.smf-action .smf-button-control__control {
+  margin-top: 40px;
+	display: inline-flex;
+	gap: var(--wp--preset--spacing--16);
+	align-items: center;
+	padding: var(--wp--preset--spacing--16) var(--wp--preset--spacing--40);
+	text-align: left;
+	border-radius: 60px;
+	background: var(--wp--preset--color--custom-red);
+	border-width: 0;
+	color: var(--wp--preset--color--custom-white);
+	font-family: inherit;
+	font-size: inherit;
+	font-style: normal;
+	font-weight: 700;
+	line-height: inherit;
+
+	&::after {
+		content: "";
+		flex-shrink: 0;
+		width: 24px;
+		aspect-ratio: 1;
+		background: url(../img/block/button/priority-arrow-button.svg) no-repeat center / contain;
+	}
+}
+	
